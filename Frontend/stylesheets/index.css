@@ -1,17 +1,17 @@
 /* Custom Font */
 @font-face {
     font-family: Copenhagen-bold;
-    src: url('/Frontend/Fonts/David\ Engelby\ Foundry\ -\ Copenhagen\ Grotesk\ Nova\ Bold.otf');
+    src: url('Frontend/Fonts/David\ Engelby\ Foundry\ -\ Copenhagen\ Grotesk\ Nova\ Bold.otf');
 }
 
 @font-face {
     font-family: Copenhagen;
-    src: url('/Frontend/Fonts/David\ Engelby\ Foundry\ -\ Copenhagen\ Grotesk\ Nova\ Regular.otf');
+    src: url('Frontend/Fonts/David\ Engelby\ Foundry\ -\ Copenhagen\ Grotesk\ Nova\ Regular.otf');
 }
 
 @font-face {
     font-family: Copenhagen-light;
-    src: url('/Frontend/Fonts/David\ Engelby\ Foundry\ -\ CopenhagenGroteskNova-Light.otf');
+    src: url('Frontend/Fonts/David\ Engelby\ Foundry\ -\ CopenhagenGroteskNova-Light.otf');
 }
 
 /* Background */
