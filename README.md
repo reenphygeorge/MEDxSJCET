@@ -1,1 +1,1 @@
-# HospitalDB
+# MEDxSJCET
