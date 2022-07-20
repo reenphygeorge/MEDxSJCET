@@ -1,0 +1,15 @@
+/* Navbar */
+.navbar {
+    border-radius: 20px;
+    margin: 30px 80px;
+    background-color: #532D60 !important;
+}
+
+.nav-item {
+    margin: 0px 120px;
+}
+
+.nav-link {
+    font-size: 25px;
+    color: white !important;
+}

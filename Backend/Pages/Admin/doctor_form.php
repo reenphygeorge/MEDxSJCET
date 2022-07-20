@@ -10,12 +10,16 @@
     {
         $name = $_POST['dname'];
         $spec = $_POST['dspec'];
-        $sql = "INSERT INTO doctor (`D_Name`, `Specialization`) VALUES ('$name', '$spec')";
-        if(!empty($name) && !empty($spec)) {    
+        $phone = $_POST['dphone'];
+        $dept = $_POST['ddept'];
+        $sql = "INSERT INTO doctor (`D_Name`, `Specialization`, `Phone_No`,`Department`) VALUES ('$name', '$spec', '$phone', '$dept')";
+        if(!empty($name) && !empty($spec) && !empty($phone) && !empty($dept)) {    
             $result = mysqli_query($conn, $sql);
         }
         unset($name);
         unset($spec);
+        unset($phone);
+        unset($dept);
         // header("location: index.html");
     }
 ?>
@@ -39,6 +43,10 @@
         <input type="text" name="dname">
         <label for="">Spec</label>
         <input type="text" name="dspec">
+        <label for="">Phone No</label>
+        <input type="text" name="dphone">
+        <label for="">Department</label>
+        <input type="text" name="ddept">
         <button>Submit</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

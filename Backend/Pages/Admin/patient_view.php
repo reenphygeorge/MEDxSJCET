@@ -20,6 +20,7 @@
                 <th scope="col">R_id</th>
                 <th scope="col">Admitted Date</th>
                 <th scope="col">Date_checkedout Date</th>
+                <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +45,7 @@
                     echo "<td>" . $row["R_id"] . "</td>";
                     echo "<td>" . $row["Date_admited"] . "</td>";
                     echo "<td>" . $row["Date_checkedout"] . "</td>";
+                    echo "<td>" . $row["Status"] . "</td>";
                     echo "</tr>";
                 }
             ?>

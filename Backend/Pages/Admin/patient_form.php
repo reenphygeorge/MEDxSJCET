@@ -15,10 +15,11 @@
         $did = $_POST['D_id'];
         $rid = $_POST['R_id'];
         $date_admit = $_POST['d_admit'];
-        // $date_checkout = $_POST['d_check'];
+        $date_checkout = $_POST['d_check'];
+        $status = $_POST['status'];
         
-        $sql = "INSERT INTO patient (`P_name`, `P_phone`, `P_gender`, `disease`, `D_id`, `R_id`, `Date_admitted`, `Date_checkedout`) VALUES ('$name', '$phone', '$gender','$disease', '$did', '$rid', '$d_admit')";
-        if(!empty($name) && !empty($phone) && !empty($gender) && !empty($disease) && !empty($did) && !empty($rid) && !empty($d_admit) ) {    
+        $sql = "INSERT INTO patient (`P_name`, `P_phone`, `P_gender`, `disease`, `D_id`, `R_id`, `Date_admitted`, `Date_checkedout`, `Status`) VALUES ('$name', '$phone', '$gender','$disease', '$did', '$rid', '$d_admit', '$date_checkout', '$status')";
+        if(!empty($name) && !empty($phone) && !empty($gender) && !empty($disease) && !empty($did) && !empty($rid) && !empty($d_admit) && !empty($status)) {    
             $result = mysqli_query($conn, $sql);
         }
         unset($name);
@@ -28,7 +29,8 @@
         unset($did);
         unset($rid);
         unset($date_admit);
-        // unset($date_checkout);
+        unset($date_checkout);
+        unset($status);
         // header("location: index.html");
     }
 ?>
@@ -61,9 +63,11 @@
         <label for="">Rid</label>
         <input type="text" name="R_id">
         <label for="">Date_admitted</label>
-        <input type="date" name="d_admit">
-        <!-- <label for="">Date_checkedout</label> -->
-        <!-- <input type="date" name="d_check"> -->
+        <input type="text" name="d_admit">
+        <label for="">Date_checkedout</label>
+        <input type="text" name="d_check">
+        <label for="">Status</label>
+        <input type="text" name="status">
         <button>Submit</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
