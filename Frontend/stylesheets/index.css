@@ -1,7 +1,39 @@
 /* Background */
 body {
-    background-image: url('../images/index_bg.png');
+    background-image: url('../images/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Doctor Image */
+.doc-img {
+    position: relative;
+    left: 400px;
+    top: 100px;
+}
+
+@media screen and (max-width:1450px) {
+    .doc-img {
+        position: relative;
+        left: 380px;
+        top: 100px;
+    }
+}
+
+@media screen and (max-width:1390px) {
+    .doc-img {
+        position: relative;
+        left: 340px;
+        top: 100px;
+    }
+}
+
+@media screen and (max-width:1290px) {
+    .doc-img {
+        position: relative;
+        left: 250px;
+        top: 100px;
+    }
 }
