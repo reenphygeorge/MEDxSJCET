@@ -37,3 +37,26 @@ body {
         top: 100px;
     }
 }
+
+.intro-text {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    position: relative;
+    left: 85px;
+    top: 90px;
+    
+}
+
+.btn-login {
+    background-color: #49384F;
+    border-radius: 15px;
+    color: white;
+    font-size: 23px;
+    width: 160px;
+    height:40px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    left: 85px;
+    top: 120px;
+}
