@@ -1,0 +1,99 @@
+/* Background */
+body {
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+.doctor
+{
+    height: 150px;
+    width: 240px;
+    margin-left: 252px;
+    margin-top: 78px;
+    background-color: #87459E;
+    border-radius: 25px;
+    
+}
+.nurse
+{
+    height: 150px;
+    width: 240px;
+    margin-left:575px ;
+    margin-top: -149px;
+    background-color: #87459E;
+    border-radius: 25px;
+    
+}
+.room
+{
+    height: 150px;
+    width: 240px;
+    margin-left:892px ;
+    margin-top: -149px;
+    background-color: #87459E;
+    border-radius: 25px;
+    
+}
+.wardboys
+{
+    height: 150px;
+    width: 240px;
+    margin-left:413px ;
+    margin-top: 94px;
+    background-color: #87459E;
+    border-radius: 25px;   
+}
+.patient
+{
+    height: 150px;
+    width: 240px;
+    margin-left:744px ;
+    margin-top: -149px;
+    background-color: #87459E;
+    border-radius: 25px;   
+}
+.patient button 
+{
+margin-left: 78px;    
+}
+
+
+.doctor h2
+{
+    padding-left: 61px;
+    color: white;
+    padding-top: 11px;
+}
+.nurse h2
+{
+    padding-left: 74px;
+    color: white;
+    padding-top: 11px;
+}
+.room h2
+{
+    padding-left: 78px;
+    color: white;
+    padding-top: 11px;
+}
+.wardboys h2{
+    padding-left: 35px;
+    color: white;
+    padding-top: 11px;
+}
+.patient h2{
+    padding-left: 58px;
+    color: white;
+    padding-top: 11px;
+}
+button
+{
+    width: 80px;
+    border: white solid;
+    color: white;
+    background-color: #87459E;
+    border-radius: 20px;
+    font-size: larger;
+    margin-left: 24px;
+}
