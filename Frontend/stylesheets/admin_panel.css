@@ -5,95 +5,102 @@ body {
     background-size: cover;
     font-family: 'Poppins', sans-serif;
 }
-.doctor
-{
+
+.doctor {
     height: 150px;
     width: 240px;
     margin-left: 252px;
     margin-top: 78px;
     background-color: #87459E;
     border-radius: 25px;
-    
+
 }
-.nurse
-{
+
+.nurse {
     height: 150px;
     width: 240px;
-    margin-left:575px ;
+    margin-left: 575px;
     margin-top: -149px;
     background-color: #87459E;
     border-radius: 25px;
-    
+
 }
-.room
-{
+
+.room {
     height: 150px;
     width: 240px;
-    margin-left:892px ;
+    margin-left: 892px;
     margin-top: -149px;
     background-color: #87459E;
     border-radius: 25px;
-    
+
 }
-.wardboys
-{
+
+.wardboys {
     height: 150px;
     width: 240px;
-    margin-left:413px ;
+    margin-left: 413px;
     margin-top: 94px;
     background-color: #87459E;
-    border-radius: 25px;   
+    border-radius: 25px;
 }
-.patient
-{
+
+.patient {
     height: 150px;
     width: 240px;
-    margin-left:744px ;
+    margin-left: 744px;
     margin-top: -149px;
     background-color: #87459E;
-    border-radius: 25px;   
+    border-radius: 25px;
 }
-.patient button 
-{
-margin-left: 78px;    
+
+.patient button {
+    margin-left: 78px;
 }
 
 
-.doctor h2
-{
+.doctor h2 {
     padding-left: 61px;
     color: white;
     padding-top: 11px;
 }
-.nurse h2
-{
+
+.nurse h2 {
     padding-left: 74px;
     color: white;
     padding-top: 11px;
 }
-.room h2
-{
+
+.room h2 {
     padding-left: 78px;
     color: white;
     padding-top: 11px;
 }
-.wardboys h2{
+
+.wardboys h2 {
     padding-left: 35px;
     color: white;
     padding-top: 11px;
 }
-.patient h2{
+
+.patient h2 {
     padding-left: 58px;
     color: white;
     padding-top: 11px;
 }
-button
-{
+
+button {
     width: 80px;
-    border: white solid;
+    border: 1px solid white;
     color: white;
     background-color: #87459E;
     border-radius: 20px;
     font-size: larger;
     margin-left: 24px;
+}
+
+button:hover {
+    background-color: #532D60;
+    color: white;
+    border-color: #ffff00;
 }

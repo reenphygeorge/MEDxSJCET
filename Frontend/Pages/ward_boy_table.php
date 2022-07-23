@@ -12,7 +12,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../stylesheets/navbar.css" />
-  <link rel="stylesheet" href="../stylesheets/login.css" />
+  <link rel="stylesheet" href="../stylesheets/doctor_table.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,29 +41,51 @@
         </div>
       </div>
     </nav>
-    <!-- Page Content -->
-    <div class="fullform">
-      <h2>Login</h2>
-      <form method="post" action="/MEDxSJCET/Backend/Pages/login_page.php">
-        <div class="txtpswd">
-          <input type="tel" name="name" required>
-          <span></span>
-          <label>Enter mobile number</label>
-        </div>
-        <div class="txtpswd">
-          <input type="password" name="pass" required>
-          <span></span>
-          <label>Enter password</label>
-        </div>
-        <div class="btn-div">
-          <button class="login-btn">Login</button>
-        </div>
-      </form>
-    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
+  <h3 class="doctor">WARD BOY's DETAILS</h3>
+  <!-- table details -->
+
+  <div class="table-details">
+
+    <table class="table">
+      <tr>
+        <th>WARD BOY ID</th>
+        <th>NAME</th>
+        <th>PHONE</th>
+        <th>ADDRESS</th>
+        <th>DOB</th>
+      </tr>
+      <?php
+                include "connection.php";
+
+                error_reporting(0);
+                session_start();
+                
+                $sql = "SELECT * FROM ward_boy";
+                $result = mysqli_query($conn, $sql);
+
+                while($row = mysqli_fetch_array($result)) {
+                  echo "<tr>";
+                  echo "<td>" . $row["WB_id"] . "</td>";
+                  echo "<td>" . $row["WB_name"] . "</td>";
+                  echo "<td>" . $row["WB_phone"] . "</td>";
+                  echo "<td>" . $row["WB_Address"] . "</td>";
+                  echo "<td>" . $row["WB_DOB"] . "</td>";
+                  echo "</tr>";
+                }
+      ?>
+    </table>
+
+  </div>
+  <div class="back-button">
+    <button class="btn-back" onclick="admin_panel()">BACK</button>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="../scripts/script.js"></script>
 </body>
 
 </html>

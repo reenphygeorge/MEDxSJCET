@@ -12,7 +12,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../stylesheets/navbar.css" />
-  <link rel="stylesheet" href="../stylesheets/login.css" />
+  <link rel="stylesheet" href="../stylesheets/admin_panel.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,28 +42,44 @@
       </div>
     </nav>
     <!-- Page Content -->
-    <div class="fullform">
-      <h2>Login</h2>
-      <form method="post" action="/MEDxSJCET/Backend/Pages/login_page.php">
-        <div class="txtpswd">
-          <input type="tel" name="name" required>
-          <span></span>
-          <label>Enter mobile number</label>
-        </div>
-        <div class="txtpswd">
-          <input type="password" name="pass" required>
-          <span></span>
-          <label>Enter password</label>
-        </div>
-        <div class="btn-div">
-          <button class="login-btn">Login</button>
-        </div>
-      </form>
-    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
+  <div class="doctor">
+    <h2>Doctor</h2><br>
+    <button onclick="admin_functions('doctor_view')">VIEW</button>
+    <button onclick="admin_functions('doctor_add')">ADD</button>
+  </div>
+
+  <div class="nurse">
+    <h2>Nurse</h2><br>
+    <button onclick="admin_functions('nurse_view')">VIEW</button>
+    <button onclick="admin_functions('nurse_add')">ADD</button>
+  </div>
+
+  <div class="room">
+    <h2>Room</h2><br>
+    <button onclick="admin_functions('room_view')">VIEW</button>
+    <button onclick="admin_functions('room_add')">ADD</button>
+  </div>
+  </div>
+  <div class="wardboys">
+    <h2>Ward boys</h2><br>
+    <button onclick="admin_functions('ward_view')">VIEW</button>
+    <button onclick="admin_functions('ward_add')">ADD</button>
+  </div>
+
+  <div class="patient">
+    <h2>Patient</h2><br>
+    <button onclick="admin_functions('patient')">VIEW</button>
+
+  </div>
+  <br><br> <br><br>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="../scripts/script.js"></script>
 </body>
 
 </html>
