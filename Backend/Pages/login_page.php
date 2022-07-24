@@ -11,7 +11,7 @@
         $name = $_POST['name'];
         $pass = $_POST['pass'];
         
-        $sql = "SELECT * FROM `credential` WHERE user_id = '$name'";
+        $sql = "SELECT * FROM `credentials` WHERE user_id = '$name'";
         if(!empty($name) && !empty($pass)) {    
             $result = mysqli_query($conn, $sql);
             $result_arr = mysqli_fetch_array($result);
