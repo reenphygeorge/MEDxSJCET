@@ -1,0 +1,38 @@
+/* Background */
+body {
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+.options {
+    height: 160px;
+    width: 340px;
+    margin-top: 78px;
+    background-color: #87459E;
+    border-radius: 25px;
+
+}
+
+.options h2 {
+    color: white;
+    padding-top: 11px;
+    text-align: center;
+}
+
+button {
+    width: 130px;
+    border: 1px solid white;
+    color: white;
+    background-color: #87459E;
+    border-radius: 20px;
+    font-size: larger;
+    margin-left: 24px;
+}
+
+button:hover {
+    background-color: #532D60;
+    color: white;
+    border-color: #ffff00;
+}

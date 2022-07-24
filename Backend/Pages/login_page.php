@@ -30,10 +30,11 @@
                     header("location: /MEDxSJCET/Frontend/Pages/admin_panel.html");
                 }
                 else if(strcmp($status,"doctor")==0) {
-                    // header("location: ./Admin/dashboard.php?offset=".$offset);
+                    $_SESSION["doctor_id"] = $login_id;
+                    header("location: /MEDxSJCET/Frontend/Pages/doctor_panel.html");
                 }
                 else {
-                    // header("location: Reception/dashboard.php?offset=".$login_name);
+                    header("location: /MEDxSJCET/Frontend/Pages/receptionist_panel.html");
                 }
             }
             else {

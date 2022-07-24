@@ -43,43 +43,52 @@
     </nav>
   </div>
 
-  <h3 class="doctor">WARD BOY's DETAILS</h3>
+  <h3 class="doctor">DOCTOR's DETAILS</h3>
   <!-- table details -->
 
   <div class="table-details">
 
     <table class="table">
-      <tr>
-        <th>WARD BOY ID</th>
+    <tr>
+        <th>ID</th>
         <th>NAME</th>
         <th>PHONE</th>
+        <th>GENDER</th>
         <th>ADDRESS</th>
-        <th>DOB</th>
-      </tr>
-      <?php
-                include "connection.php";
+        <th>DISEASE</th>
+        <th>DOCTOR ID</th>
+        <th>ROOM ID</th>
+        <th>ADMITTED ON</th>
+        <th>DISCHARGED ON</th>
+    </tr>
+    <?php
+        include "connection.php";
 
-                error_reporting(0);
-                session_start();
+        error_reporting(0);
+        session_start();
                 
-                $sql = "SELECT * FROM ward_boy";
-                $result = mysqli_query($conn, $sql);
+        $sql = "SELECT * FROM patient WHERE D_id = ".$_SESSION['doctor_id'];
+        $result = mysqli_query($conn, $sql);
 
-                while($row = mysqli_fetch_array($result)) {
-                  echo "<tr>";
-                  echo "<td>" . $row["WB_id"] . "</td>";
-                  echo "<td>" . $row["WB_name"] . "</td>";
-                  echo "<td>" . $row["WB_phone"] . "</td>";
-                  echo "<td>" . $row["WB_Address"] . "</td>";
-                  echo "<td>" . $row["WB_DOB"] . "</td>";
-                  echo "</tr>";
-                }
-      ?>
+        while($row = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["P_id"] . "</td>";
+            echo "<td>" . $row["P_name"] . "</td>";
+            echo "<td>" . $row["P_phone"] . "</td>";
+            echo "<td>" . $row["P_gender"] . "</td>";
+            echo "<td>" . $row["P_Address"] . "</td>";
+            echo "<td>" . $row["disease"] . "</td>";
+            echo "<td>" . $row["R_id"] . "</td>";
+            echo "<td>" . $row["Date_admitted"] . "</td>";
+            echo "<td>" . $row["Date_checkedout"] . "</td>";
+            echo "</tr>";
+        }
+    ?>
     </table>
 
   </div>
   <div class="back-button">
-    <button class="btn-back" onclick="admin_panel()">BACK</button>
+    <button class="btn-back" onclick="doctor_panel()">BACK</button>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
