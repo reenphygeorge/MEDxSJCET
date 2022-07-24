@@ -50,8 +50,8 @@ function doctor_functions(page) {
         case 'view':
             window.location.href = "doctor_patient_table.php";
             break;
-        case 'patient':
-            window.location.href = "patient_table.php";
+        case 'update':
+            window.location.href = "doctor_patient_update.php";
             break;
     }
 }
