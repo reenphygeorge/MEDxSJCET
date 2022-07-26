@@ -12,7 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../stylesheets/navbar.css" />
-    <link rel="stylesheet" href="../stylesheets/doctor_panel.css" />
+    <link rel="stylesheet" href="../stylesheets/confirmation.css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,26 +41,32 @@
                 </div>
             </div>
         </nav>
-        <!-- Page Content -->
     </div>
 
-    <div class="d-flex justify-content-center">
-        <div class="options">
-            <h2>Options</h2><br>
-            <button onclick="doctor_functions('update')">UPDATE</button>
-            <button onclick="doctor_functions('view')">VIEW</button>
-            <button onclick="doctor_functions('discharge')">DISCHARGE</button>
+    <div id="card" class="d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">New Ward Boy Added</h1>
+                <?php
+                    $uid = $_GET['uid'];
+                    include "connection.php";
+
+                    error_reporting(0);
+                    session_start();
+                
+                    $sql = "SELECT * FROM ward_boy WHERE WB_id = '$uid'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    echo "<h2 class=\"card-subtitle1\">ID: ". $row["WB_id"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle2\">NAME: ". $row["WB_name"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">DOB: ". $row["WB_DOB"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle7\">ADDRESS: ". $row["WB_Address"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle8\">PHONE: ". $row["WB_phone"] ."</h2>";
+                ?>
+            </div>
         </div>
     </div>
-    <br><br> <br><br>
-    <div class="d-flex justify-content-center">
-        <button class="back-button" onclick="logout()">LOGOUT</button>
-    </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <div class="d-flex justify-content-center"><button onclick="admin_panel()">Back</button></div>
     <script src="../scripts/script.js"></script>
 </body>
 

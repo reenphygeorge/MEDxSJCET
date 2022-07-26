@@ -21,9 +21,7 @@
             $status = $result_arr["status"];
             $offset = $login_id;
             if(empty($login_id)) {
-                // No user found condition
-                // $offset[1] = 0;
-                // header("location: admin_dashboard.php?offset="$offset);
+                header("location: ../../Frontend/Pages/no_user.html");
             }
             else if(strcmp($login_pass,$pass)==0) {
                 if(strcmp($status,"admin")==0) {
@@ -38,9 +36,7 @@
                 }
             }
             else {
-                // Password Error
-                // $offset[1] = -1;
-                // header("location: admin_dashboard.php?offset=".http_build_query($offset));
+                header("location: ../../Frontend/Pages/incorrect_pass.html");
             }
         }
     }

@@ -11,7 +11,7 @@
         $no = $_POST['rid'];
         $type = $_POST['rtype'];
         $sql = "INSERT INTO room (`R_id`,`R_Type`) VALUES ('$no','$type')";  
-            $result = mysqli_query($conn, $sql);
-        // header("location: index.html");
+        $result = mysqli_query($conn, $sql);
+        header("location: ../../../Frontend/Pages/room_confirmation.html");
     }
 ?>

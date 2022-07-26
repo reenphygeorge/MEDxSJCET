@@ -16,6 +16,12 @@
 
         $sql = "INSERT INTO nurse (`N_Name`, `N_phonenumber`, `N_gender`,`N_address`,`N_DOB`) VALUES ('$name', '$phone', '$gender', '$address', '$dob')";
         $result = mysqli_query($conn, $sql);
-        // header("location: index.html");
+
+        $sql = "SELECT * FROM `nurse` ORDER BY `N_id` DESC LIMIT 1";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $uidmax=$row['N_id'];
+
+        header("location: ../../../Frontend/Pages/nurse_confirmation.php?uid=".$uidmax);
     }
 ?>

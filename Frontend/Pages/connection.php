@@ -11,8 +11,4 @@
     if(!$conn) {
         die("Failed". mysqli_connect_error());
     }
-
-    // echo "Connection Success!!";
-    // $val = $_GET['offset'];
-    // echo $val;
 ?>

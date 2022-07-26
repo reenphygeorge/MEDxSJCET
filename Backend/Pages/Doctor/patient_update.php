@@ -4,8 +4,6 @@
     error_reporting(0);
     session_start();
     
-    echo "Welcome Server";
-    
     if($_SERVER['REQUEST_METHOD']=="POST")
     {
         $pid = $_POST['pid'];
@@ -18,5 +16,6 @@
 
         $sql = "UPDATE room SET available = 'no' WHERE R_id = '$rid'"; 
         $result = mysqli_query($conn, $sql);
+        header("location: ../../../Frontend/Pages/update_patient_confirmation.php?uid=".$pid);
     }
 ?>

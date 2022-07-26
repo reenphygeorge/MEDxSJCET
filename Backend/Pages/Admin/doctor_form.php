@@ -27,6 +27,6 @@
 
         $sql = "INSERT INTO credentials (`user_id`, `user_name`, `password`,`status`) VALUES ('$uidmax', '$name', '$password', 'doctor')";
         $result = mysqli_query($conn, $sql);
-        // header("location: index.html");
+        header("location: ../../../Frontend/Pages/doctor_confirmation.php?uid=".$uidmax);
     }
 ?>

@@ -12,7 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../stylesheets/navbar.css" />
-    <link rel="stylesheet" href="../stylesheets/doctor_confirmation.css" />
+    <link rel="stylesheet" href="../stylesheets/confirmation.css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,24 +43,32 @@
         </nav>
     </div>
 
-    <div id="card" class="row d-flex justify-content-center">
+    <div id="card" class="d-flex justify-content-center">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title">New Doctor Added</h1>
-                <h2 class="card-subtitle1">ID:54535</h2>
-                <h2 class="card-subtitle2">NAME:sonu t shaji</h2>
-                <h2 class="card-subtitle3">SPECIALIZATION:dermatology</h2>
-                <h2 class="card-subtitle4">DEPARTMENT:dfsdf</h2>
-                <h2 class="card-subtitle5">DOB:01/01/2000</h2>
-                <h2 class="card-subtitle6">GENDER:male</h2>
-                <h2 class="card-subtitle7">ADDRESS:sdgsgsdgsdg</h2>
-                <h2 class="card-subtitle8">PHONE:477457457457</h2>
-                <h2 class="card-subtitle9">PASSWORD:zge466d</h2>
+                <h1 class="card-title">New Nurse Added</h1>
+                <?php
+                    $uid = $_GET['uid'];
+                    include "connection.php";
 
+                    error_reporting(0);
+                    session_start();
+                
+                    $sql = "SELECT * FROM nurse WHERE N_id = '$uid'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    echo "<h2 class=\"card-subtitle1\">ID: ". $row["N_id"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle2\">NAME: ". $row["N_name"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">DOB: ". $row["N_DOB"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle6\">GENDER: ". $row["N_gender"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle7\">ADDRESS: ". $row["N_address"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle8\">PHONE: ". $row["N_phonenumber"] ."</h2>";
+                ?>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center"><button>Back</button></div>
+    <div class="d-flex justify-content-center"><button onclick="admin_panel()">Back</button></div>
+    <script src="../scripts/script.js"></script>
 </body>
 
 </html>

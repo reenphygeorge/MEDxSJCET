@@ -43,15 +43,37 @@
         </nav>
     </div>
 
-    <div id="card" class="d-flex justify-content-center">
+    <div id="card" class="row d-flex justify-content-center">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title">New Room Added</h1>
+            <h1 class="card-title">New Doctor Added</h1>
+                <?php
+                    $uid = $_GET['uid'];
+                    include "connection.php";
+
+                    error_reporting(0);
+                    session_start();
+                
+                    $sql = "SELECT * FROM doctor WHERE D_id = '$uid'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    echo "<h2 class=\"card-subtitle1\">ID: ". $row["D_id"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle2\">NAME: ". $row["D_Name"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle3\">SPECIALIZATION: ". $row["Specialization"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle4\">DEPARTMENT: ". $row["Department"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">DOB: ". $row["DOB"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle6\">GENDER: ". $row["Gender"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle7\">ADDRESS: ". $row["Address"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle8\">PHONE: ". $row["Phone_No"] ."</h2>";
+                    $sql = "SELECT password FROM credentials WHERE user_id = '$uid'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    echo "<h2 class=\"card-subtitle9\">PASSWORD: ". $row["password"] ."</h2>";
+                ?>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center"><button onclick="doctor_panel()">Back</button></div>
-    <script src="../scripts/script.js"></script>
+    <div class="d-flex justify-content-center"><button onclick="admin_panel()">Back</button></div>
 </body>
-
+<script src="../scripts/script.js"></script>
 </html>

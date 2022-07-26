@@ -3,6 +3,10 @@ function login_redirect() {
     window.location.href = "Frontend/Pages/login.html"
 }
 
+function pass_login_redirect() {
+    window.location.href = "login.html"
+}
+
 // Login Page
 function logout() {
     window.location.href = "login.html";
@@ -53,6 +57,9 @@ function doctor_functions(page) {
         case 'update':
             window.location.href = "doctor_patient_update.php";
             break;
+        case 'discharge':
+            window.location.href = "discharge_patient.php";
+            break;
     }
 }
 
@@ -61,13 +68,17 @@ function doctor_panel() {
 }
 
 // Receptionist Functions
-function reception_functions() {
+function reception_functions(page) {
     switch (page) {
         case 'create':
-            window.location.href = "doctor_patient_table.php";
+            window.location.href = "create_patient.html";
             break;
         case 'book':
-            window.location.href = "patient_table.php";
+            window.location.href = "book_doctor.php";
             break;
     }
+}
+
+function receptionist_panel() {
+    window.location.href = "receptionist_panel.html"
 }
