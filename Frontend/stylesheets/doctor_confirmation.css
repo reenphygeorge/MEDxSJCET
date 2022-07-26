@@ -1,0 +1,46 @@
+body {
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+
+    border-radius: 20px;
+    margin: 30px 80px;
+    background-color: #87459E !important;
+    color: white;
+    font-weight: 800;
+    width: 50em;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px !important;
+}
+
+h2 {
+    font-size: medium;
+}
+
+nav {
+    font-size: 800;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #532D60;
+    border: #532D60 solid;
+    color: white;
+}
+
+button:hover {
+    border-color: #ffff00;
+
+}
