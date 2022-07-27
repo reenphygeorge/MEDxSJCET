@@ -12,8 +12,7 @@
         $did = $_POST['did'];
         
         $sql = "UPDATE patient SET D_id = '$did' WHERE P_id = '$pid'";
-        if(!empty($pid) && !empty($did)) {  
-            $result = mysqli_query($conn, $sql);
-        }
+        $result = mysqli_query($conn, $sql);
+        header("location: ../../../Frontend/Pages/doctor_book_confirmation.php?uid=".$did);
     }
 ?>

@@ -13,3 +13,8 @@
     font-size: 25px;
     color: white !important;
 }
+
+/* overflow */
+body {
+    overflow-x: hidden !important;
+}

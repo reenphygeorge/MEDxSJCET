@@ -12,7 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../stylesheets/navbar.css" />
-    <link rel="stylesheet" href="../stylesheets/doctor_panel.css" />
+    <link rel="stylesheet" href="../stylesheets/confirmation.css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,38 +41,37 @@
                 </div>
             </div>
         </nav>
-        <!-- Page Content -->
-        <h2 class="mt-5">Welcome, Doctor</h2>
-        <div class="d-flex justify-content-center">
-            <div class="options">
-                <h2 class="text-center">Options</h2><br>
-                <div class="row">
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <button onclick="doctor_functions('update')">UPDATE</button>
-                    </div>
-                    <!-- </div> -->
-                    <!-- <div class="row"> -->
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <button onclick="doctor_functions('view')">VIEW</button>
-                    </div>
-                    <!-- </div> -->
-                    <!-- <div class="row"> -->
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <button onclick="doctor_functions('discharge')">DISCHARGE</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br><br> <br><br>
-        <div class="d-flex justify-content-center">
-            <button class="main-button" onclick="logout()">LOGOUT</button>
-        </div>
     </div>
 
+    <div id="card" class="d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Appointment Booked</h1>
+                <?php
+                    $uid = $_GET['uid'];
+                    include "connection.php";
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+                    error_reporting(0);
+                    session_start();
+                
+                    $sql = "SELECT * FROM patient WHERE D_id = '$uid'";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_array($result);
+                    $did = $row["D_id"];
+                    
+                    $sql = "SELECT * FROM doctor WHERE D_id = '$did'";
+                    $result2 = mysqli_query($conn, $sql);
+                    $row2 = mysqli_fetch_array($result2);
+                    echo "<h2 class=\"card-subtitle1\">ID: ". $row["P_id"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle2\">NAME: ". $row["P_name"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">DOCTOR ID: ". $row2["D_id"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">DOCTOR NAME: ". $row2["D_Name"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">DEPARTMENT: ". $row2["Department"] ."</h2>";
+                ?>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center"><button onclick="receptionist_panel()">Back</button></div>
     <script src="../scripts/script.js"></script>
 </body>
 

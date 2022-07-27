@@ -12,7 +12,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../stylesheets/navbar.css" />
-  <link rel="stylesheet" href="../stylesheets/doctor_form.css" />
+  <link rel="stylesheet" href="../stylesheets/form.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,42 +42,52 @@
       </div>
     </nav>
 
-    <h2> Update Patient </h2>
+    <h2 class="text-center"> Add New Patient </h2>
     <form method="post" action="/MEDxSJCET/Backend/Pages/Reception/create_patient.php">
-      <table class="d-flex justify-content-center">
-        <tr>
-          <td>
-            <input class="form" type="text" placeholder="      Name" name="pname" required>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input class="form" type="text" placeholder="      Phone" name="pphone" required>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input class="form" type="text" placeholder="      Address" name="paddress" required>
-          </td>
-        </tr>
-        <tr>
-          <td><br><br>
-            <h5>Gender</h5>
-          </td>
-        </tr>
-        <tr>
-          <td><input required type="radio" value="male" class="radio" name="pgender"></td>
-          <td><input required type="radio" value="female" class="radio" name="pgender"></td>
-          <td><input required type="radio" value="other" class="radio" name="pgender"></td>
-        </tr>
-        <tr>
-          <td>M</td>
-          <td>F</td>
-          <td>O</td>
-        </tr>
-      </table>
-      <button class="back" type="button" onclick="receptionist_panel()">Back</button>
-      <button class="submit">Submit</button>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <input class="form room_form" type="text" placeholder="      Name" name="pname" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <input class="form room_form" type="text" placeholder="      Phone" name="pphone" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <input class="form room_form" type="text" placeholder="      Address" name="paddress" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <table>
+            <tr>
+              <td><br><br>
+                <h5>Gender</h5>
+              </td>
+            </tr>
+            <tr>
+              <td><input required type="radio" value="male" class="radio" name="pgender"></td>
+              <td><input required type="radio" value="female" class="radio" name="pgender"></td>
+              <td><input required type="radio" value="other" class="radio" name="pgender"></td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>F</td>
+              <td>O</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6 d-flex justify-content-end">
+          <button class="back" type="button" onclick="receptionist_panel()">Back</button>
+        </div>
+        <div class="col-md-6 d-flex justify-content-start">
+          <button class="submit">Submit</button>
+        </div>
+      </div>
     </form>
     <br>
     <br>

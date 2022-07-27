@@ -12,7 +12,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../stylesheets/navbar.css" />
-  <link rel="stylesheet" href="../stylesheets/doctor_form.css" />
+  <link rel="stylesheet" href="../stylesheets/form.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,12 +42,12 @@
       </div>
     </nav>
 
-    <h2> Update Patient </h2>
+    <h2 class="text-center"> Update Patient </h2>
     <form method="post" action="/MEDxSJCET/Backend/Pages/Doctor/patient_update.php">
       <table class="d-flex justify-content-center">
       <tr>
           <td>
-            <select class="form" name="pid">
+            <select class="form room_form" name="pid">
             <option disabled selected hidden>Patient ID</option>
             <?php
                 include "connection.php";
@@ -66,12 +66,12 @@
         </tr>
         <tr>
           <td>
-            <input class="form" type="text" placeholder="      Disease" name="disease" required>
+            <input class="form room_form" type="text" placeholder="      Disease" name="disease" required>
           </td>
         </tr>
         <tr>
           <td>
-            <select class="form" name="rid">
+            <select class="form room_form" name="rid">
             <option disabled selected hidden>Room No (if admitted)</option>
             <?php
                 include "connection.php";
@@ -90,17 +90,20 @@
         </tr>
         <tr>
           <td>
-            <input class="form" type="text" placeholder="      Admitted Date" name="adm_date" onfocus="(this.type='date')">
+            <input class="form room_form" type="text" placeholder="      Admitted Date" name="adm_date" onfocus="(this.type='date')">
           </td>
         </tr>
       </table>
-      <button class="back" type="button" onclick="doctor_panel()">Back</button>
-      <button class="submit">Submit</button>
+      
+      <div class="row mt-5">
+        <div class="col-lg-6 d-flex justify-content-end">
+          <button class="back" type="button" onclick="doctor_panel()">Back</button>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-start">
+          <button class="submit">Submit</button>
+        </div>
+      </div>
     </form>
-    <br>
-    <br>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

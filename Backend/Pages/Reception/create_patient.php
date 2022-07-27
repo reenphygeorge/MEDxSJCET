@@ -14,9 +14,13 @@
         $address = $_POST['paddress'];
         
         $sql = "INSERT INTO patient (`P_name`, `P_phone`, `P_gender`, `P_Address`) VALUES ('$name', '$phone', '$gender', '$address')";
-        if(!empty($name) && !empty($phone) && !empty($gender) && !empty($address)) {    
-            $result = mysqli_query($conn, $sql);
-        }
-        // header("location: index.html");
+        $result = mysqli_query($conn, $sql);
+
+        $sql = "SELECT * FROM `patient` ORDER BY `P_id` DESC LIMIT 1";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $pid=$row['P_id'];
+
+        header("location: ../../../Frontend/Pages/patient_create_confirmation.php?uid=".$pid);
     }
 ?>

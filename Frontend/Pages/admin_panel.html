@@ -42,41 +42,54 @@
       </div>
     </nav>
     <!-- Page Content -->
-  </div>
+    <h2 class="text-center welcome">Welcome, Admin</h2>
+    <div class="row r1 mt-5">
+      <div class="col-lg-4 d-flex justify-content-center">
+        <div class="doctor">
+          <h2>Doctor</h2><br>
+          <button onclick="admin_functions('doctor_view')">VIEW</button>
+          <button onclick="admin_functions('doctor_add')">ADD</button>
+        </div>
+      </div>
 
-  <div class="doctor">
-    <h2>Doctor</h2><br>
-    <button onclick="admin_functions('doctor_view')">VIEW</button>
-    <button onclick="admin_functions('doctor_add')">ADD</button>
-  </div>
+      <div class="col-lg-4 d-flex justify-content-center">
+        <div class="nurse">
+          <h2>Nurse</h2><br>
+          <button onclick="admin_functions('nurse_view')">VIEW</button>
+          <button onclick="admin_functions('nurse_add')">ADD</button>
+        </div>
+      </div>
 
-  <div class="nurse">
-    <h2>Nurse</h2><br>
-    <button onclick="admin_functions('nurse_view')">VIEW</button>
-    <button onclick="admin_functions('nurse_add')">ADD</button>
-  </div>
+      <div class="col-lg-4 d-flex justify-content-center">
+        <div class="room">
+          <h2>Room</h2><br>
+          <button onclick="admin_functions('room_view')">VIEW</button>
+          <button onclick="admin_functions('room_add')">ADD</button>
+        </div>
+      </div>
+    </div>
+    <div class="row r2">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-4 d-flex justify-content-center">
+        <div class="wardboys">
+          <h2>Ward boys</h2><br>
+          <button onclick="admin_functions('ward_view')">VIEW</button>
+          <button onclick="admin_functions('ward_add')">ADD</button>
+        </div>
+      </div>
 
-  <div class="room">
-    <h2>Room</h2><br>
-    <button onclick="admin_functions('room_view')">VIEW</button>
-    <button onclick="admin_functions('room_add')">ADD</button>
-  </div>
-  </div>
-  <div class="wardboys">
-    <h2>Ward boys</h2><br>
-    <button onclick="admin_functions('ward_view')">VIEW</button>
-    <button onclick="admin_functions('ward_add')">ADD</button>
-  </div>
+      <div class="col-lg-3 d-flex justify-content-center">
+        <div class="patient">
+          <h2>Patient</h2><br>
+          <button onclick="admin_functions('patient')">VIEW</button>
+        </div>
+      </div>
+    </div>
+    <br><br> <br><br>
 
-  <div class="patient">
-    <h2>Patient</h2><br>
-    <button onclick="admin_functions('patient')">VIEW</button>
-
-  </div>
-  <br><br> <br><br>
-
-  <div class="d-flex justify-content-center">
-    <button class="back-button" onclick="logout()">LOGOUT</button>
+    <div class="d-flex justify-content-center">
+      <button class="back-button" onclick="logout()">LOGOUT</button>
+    </div>
   </div>
 
 

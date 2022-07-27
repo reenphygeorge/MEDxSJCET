@@ -12,7 +12,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../stylesheets/navbar.css" />
-  <link rel="stylesheet" href="../stylesheets/doctor_form.css" />
+  <link rel="stylesheet" href="../stylesheets/form.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,35 +42,35 @@
       </div>
     </nav>
 
-    <h2> Add New Ward Boy </h2>
+    <h2 class="text-center"> Add New Ward Boy </h2>
     <form method="post" action="/MEDxSJCET/Backend/Pages/Admin/ward_boy_form.php">
-      <table>
-        <tr>
-          <td>
-            <input class="form" type="text" placeholder="      name" name="wname" required>
-          </td>
-          <td>
-            <input class="form" type="text" placeholder="      Phone" name="wphone" required>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input class="form" type="text" placeholder="Address" name="waddress" required>
-          </td>
-          <td>
-            <input class="form" type="text" placeholder="Date of birth" name="wdob" required
-              onfocus="(this.type='date')">
-          </td>
-        </tr>
-      </table>
-      <button class="back" type="button" onclick="admin_panel()">Back</button>
-      <button class="submit">Submit</button>
+      <div class="row">
+        <div class="col-lg-6">
+          <input class="form" type="text" placeholder="      name" name="wname" required>
+        </div>
+        <div class="col-lg-6">
+          <input class="form" type="text" placeholder="      Phone" name="wphone" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <input class="form" type="text" placeholder="Address" name="waddress" required>
+        </div>
+        <div class="col-lg-6">
+          <input class="form" type="text" required placeholder="Date of birth" name="wdob" onfocus="(this.type='date')">
+        </div>
+      </div>
+      <div class="row mt-5">
+        <!-- <div class="col-lg-3"></div> -->
+        <div class="col-lg-6 d-flex justify-content-end">
+          <button class="back" type="button" onclick="admin_panel()">Back</button>
+        </div>
+        <!-- <div class="col-lg-3"></div> -->
+        <div class="col-lg-6 d-flex justify-content-start">
+          <button class="submit">Submit</button>
+        </div>
+      </div>
     </form>
-    <br>
-    <br>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>

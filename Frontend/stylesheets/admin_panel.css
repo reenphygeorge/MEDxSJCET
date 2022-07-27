@@ -9,8 +9,6 @@ body {
 .doctor {
     height: 150px;
     width: 240px;
-    margin-left: 252px;
-    margin-top: 78px;
     background-color: #87459E;
     border-radius: 25px;
 
@@ -19,8 +17,6 @@ body {
 .nurse {
     height: 150px;
     width: 240px;
-    margin-left: 575px;
-    margin-top: -149px;
     background-color: #87459E;
     border-radius: 25px;
 
@@ -29,8 +25,6 @@ body {
 .room {
     height: 150px;
     width: 240px;
-    margin-left: 892px;
-    margin-top: -149px;
     background-color: #87459E;
     border-radius: 25px;
 
@@ -39,8 +33,6 @@ body {
 .wardboys {
     height: 150px;
     width: 240px;
-    margin-left: 413px;
-    margin-top: 94px;
     background-color: #87459E;
     border-radius: 25px;
 }
@@ -48,8 +40,6 @@ body {
 .patient {
     height: 150px;
     width: 240px;
-    margin-left: 744px;
-    margin-top: -149px;
     background-color: #87459E;
     border-radius: 25px;
 }
@@ -58,6 +48,13 @@ body {
     margin-left: 78px;
 }
 
+.r2 {
+    margin-top: 100px;
+}
+
+.welcome {
+    color: white;
+}
 
 .doctor h2 {
     padding-left: 61px;
@@ -102,7 +99,7 @@ button {
 button:hover {
     background-color: #532D60;
     color: white;
-    border-color: #ffff00;
+    border-color: #ffff00 !important;
 }
 
 .back-button {

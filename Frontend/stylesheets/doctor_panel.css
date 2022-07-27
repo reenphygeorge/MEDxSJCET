@@ -8,7 +8,7 @@ body {
 
 .options {
     height: 160px;
-    width: 340px;
+    width: 40em;
     margin-top: 78px;
     background-color: #87459E;
     border-radius: 25px;
@@ -31,8 +31,32 @@ button {
     margin-left: 24px;
 }
 
+.rec-btn {
+    width: 180px;
+}
+
 button:hover {
     background-color: #532D60;
     color: white;
     border-color: #ffff00;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.main-button {
+    width: 150px !important;
+    height: 40px !important;
+    border-radius: 15px !important;
+    background-color: #532D60 !important;
+    border: #532D60 solid !important;
+    color: white !important;
+}
+
+.main-button:hover {
+    background-color: #532D60;
+    color: white;
+    border-color: #ffff00 !important;
 }
