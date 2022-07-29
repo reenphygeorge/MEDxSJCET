@@ -1,20 +1,20 @@
-# MEDxSJCET 👨‍⚕️
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+# MEDxSJCET 👨‍⚕️
 
-## About The Project
+### 🌐 About The Project
 
 - MEDxSJCET is a Hospital Management System open sourced under MIT licence. 
 
-### Built With
+### 🛠️ Built With
 
 - [HTML](https://www.w3schools.com/html/)
 - [CSS](https://www.w3schools.com/Css/)
 - [Vanilla JS](https://www.javatpoint.com/what-is-vanilla-javascript)
-- [php](https://www.php.net/)
+- [PHP](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
 
 
