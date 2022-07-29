@@ -1,4 +1,4 @@
-# MEDxSJCET
+# MEDxSJCET 👨‍⚕️
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -7,7 +7,7 @@
 
 ## About The Project
 
-- MEDxSJCET is an open sourced Hospital Management System Project under MIT licence. 
+- MEDxSJCET is a Hospital Management System open sourced under MIT licence. 
 
 ### Built With
 
