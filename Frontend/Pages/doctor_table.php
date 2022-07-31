@@ -65,7 +65,7 @@
     </nav>
   </div>
 
-  <h3 class="doctor">DOCTOR's DETAILS</h3>
+  <h3 class="doctor">Doctor's Details</h3>
   <!-- table details -->
 
   <div class="table-details mb-5">
