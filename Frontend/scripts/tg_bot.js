@@ -1,5 +1,6 @@
 var name, email, message
 function reader() {
+    // getting user information from the form
     name = document.forms["ContactForm"]["name"].value;
     email = document.forms["ContactForm"]["email"].value;
     message = document.forms["ContactForm"]["message"].value;
