@@ -29,10 +29,25 @@
         <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <!-- <a class="nav-link" href="contact.html">Contact</a> -->
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Options
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/receptionist_panel.html">> Dashboard</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/create_patient.html">> Create Patient</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/book_doctor.php">> Book Appointment</a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -70,11 +85,11 @@
           </td>
         </tr>
       </table>
-      <div class="row mt-5">
-        <div class="col-lg-6 d-flex justify-content-end">
+      <div class="row mt-4 mb-5">
+        <!-- <div class="col-md-6 d-flex justify-content-end">
           <button class="back" type="button" onclick="receptionist_panel()">Back</button>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-start">
+        </div> -->
+        <div class="col-md-12 d-flex justify-content-center">
           <button class="submit">Submit</button>
         </div>
       </div>

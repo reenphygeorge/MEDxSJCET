@@ -32,7 +32,29 @@
               <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <!-- <a class="nav-link" href="contact.html">Contact</a> -->
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Options
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/admin_panel.html">> Dashboard</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_table.php">> View Doctor</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_form.html">> Add Doctor</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/nurse_table.php">> View Nurse</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/nurse_form.html">> Add Nurse</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/room_table.php">> View Room</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/room_form.html">> Add Room</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/ward_boy_table.php">> View Ward-Boy</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/wardboy_form.html">> Add Ward-Boy</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/patient_table.php">> View Patient</a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -46,7 +68,7 @@
   <h3 class="doctor">NURSE's DETAILS</h3>
   <!-- table details -->
 
-  <div class="table-details">
+  <div class="table-details mb-5">
 
     <table class="table">
         <tr>
@@ -78,9 +100,6 @@
                 }
         ?>
     </table>
-</div>
-<div class="back-button">
-    <button class="btn-back" onclick="admin_panel()">BACK</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
