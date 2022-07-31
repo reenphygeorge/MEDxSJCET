@@ -93,6 +93,16 @@
         </tr>
         <tr>
           <td>
+            <input class="form room_form" type="text" placeholder="      Prescription" name="prescription" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form room_form" type="text" placeholder="      Tests" name="test" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <select class="form room_form" name="rid">
             <option disabled selected hidden>Room No (if admitted)</option>
             <?php

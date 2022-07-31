@@ -87,6 +87,7 @@
                     echo "<h2 class=\"card-subtitle6\">GENDER: ". $row["Gender"] ."</h2>";
                     echo "<h2 class=\"card-subtitle7\">ADDRESS: ". $row["Address"] ."</h2>";
                     echo "<h2 class=\"card-subtitle8\">PHONE: ". $row["Phone_No"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle8\">SALARY: ". $row["Salary"] ."</h2>";
                     $sql = "SELECT password FROM credentials WHERE user_id = '$uid'";
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_array($result);

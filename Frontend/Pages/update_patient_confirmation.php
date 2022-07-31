@@ -24,7 +24,7 @@
 <body>
     <div class="container">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
             <div class="container-fluid">
                 <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -32,7 +32,31 @@
                             <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <!-- <a class="nav-link" href="contact.html">Contact</a> -->
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Options
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_panel.html">>
+                                            Dashboard</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="/MEDxSJCET/Frontend/Pages/doctor_patient_update.php">>
+                                            Update Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="/MEDxSJCET/Frontend/Pages/doctor_patient_table.php">> View Booked
+                                            Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="/MEDxSJCET/Frontend/Pages/discharge_patient.php">> Discharge
+                                            Patient</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>

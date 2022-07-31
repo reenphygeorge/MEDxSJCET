@@ -93,8 +93,8 @@
                   echo "<tr>";
                   echo "<td>" . $row["D_id"] . "</td>";
                   echo "<td>" . $row["D_Name"] . "</td>";
-                  echo "<td>" . $row["Specialization"] . "</td>";
                   echo "<td>" . $row["Phone_No"] . "</td>";
+                  echo "<td>" . $row["Specialization"] . "</td>";
                   echo "<td>" . $row["Address"] . "</td>";
                   echo "<td>" . $row["DOB"] . "</td>";
                   echo "<td>" . $row["Gender"] . "</td>";
