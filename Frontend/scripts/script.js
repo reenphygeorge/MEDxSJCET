@@ -64,7 +64,22 @@ function doctor_functions(page) {
             window.location.href = "discharge_patient.php";
             break;
         case 'leave_req':
-            window.location.href = "doctor_req_leave.html";
+            var url = window.location.href;
+            var url_length = url.length;
+            let temp, i = 1, id = "";
+            while (temp != '=') {
+                temp = url.charAt(url_length - i);
+                if (temp == '=') {
+                    i--;
+                    break;
+                }
+                i++;
+            }
+            for (; i >= 1; i--) {
+                id += url.charAt(url_length - i);
+            }
+            url = "doctor_req_leave.php?id=" + id;
+            window.location.href = url;
             break;
     }
 }

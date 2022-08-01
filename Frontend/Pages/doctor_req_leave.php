@@ -13,6 +13,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../stylesheets/navbar.css" />
     <link rel="stylesheet" href="../stylesheets/form.css" />
+    <link rel="stylesheet" href="../stylesheets/confirmation.css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,37 +76,76 @@
         </nav>
         <!-- Page Content -->
     </div>
-    <h2 class="text-center"> Request Leave </h2>
-    <form method="post" action="/MEDxSJCET/Backend/Pages/Doctor/req_leave.php">
-        <div class="row">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <input type="text" class="form room_form" placeholder="      Leave Date (From)" name="leave_from"
-                    required onclick="this.type='date'"><br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <input type="text" class="form room_form" placeholder="      Leave Date (To)" name="leave_to" required
-                    onclick="this.type='date'"><br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <input type="text" class="form room_form" placeholder="      Leave Reason" name="leave_reason"
-                    required><br>
-            </div>
-        </div>
-        <div class="row mt-5 mb-5">
-            <!-- <div class="col-lg-3"></div> -->
-            <!-- <div class="col-lg-6 d-flex justify-content-end">
-        <button class="back" type="button" onclick="admin_panel()">Back</button>
-      </div> -->
-            <!-- <div class="col-lg-3"></div> -->
-            <div class="col-lg-12 d-flex justify-content-center">
-                <button class="submit">Submit</button>
-            </div>
-        </div>
-    </form>
+    <?php
+        include "connection.php";
+        error_reporting(0);
+        session_start();
+        // $sql = "SELECT * from doctor WHERE D_id = ".$_SESSION['doctor_id'];
+        // $result = mysqli_query($conn, $sql);
+        $did = $_GET["id"];
+
+        $sql = "SELECT * FROM doctor WHERE D_id = $did";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        if($row["Leave_Req"] == 0 && $row["On_Leave"] == 0 && $row["Leave_Rejected"] == 0) 
+        {
+            echo "<h2 class=\"text-center\"> Request Leave </h2>";
+            echo"<form method=\"post\" action=\"/MEDxSJCET/Backend/Pages/Doctor/req_leave.php\">";
+                echo "<div class=\"row\">";
+                    echo"<div class=\"col-lg-12 d-flex justify-content-center\">
+                        <input type=\"text\" class=\"form room_form\" placeholder=\"      Leave Date (From)\" name=\"leave_from\"
+                            required onclick=\"this.type='date'\"><br>
+                    </div>";
+                echo "</div>";
+                echo "<div class=\"row\">";
+                    echo "<div class=\"col-lg-12 d-flex justify-content-center\">
+                        <input type=\"text\" class=\"form room_form\" placeholder=\"      Leave Date (To)\" name=\"leave_to\" required
+                            onclick=\"this.type='date'\"><br>";
+                    echo "</div>";
+                echo"</div>";
+                echo "<div class=\"row\">";
+                    echo "<div class=\"col-lg-12 d-flex justify-content-center\">
+                        <input type=\"text\" class=\"form room_form\" placeholder=\"      Leave Reason\" name=\"leave_reason\"
+                            required><br>";
+                    echo "</div>";
+                echo "</div>";
+                echo "<div class=\"row mt-5 mb-5\">";
+                    echo "<div class=\"col-lg-12 d-flex justify-content-center\">
+                        <button class=\"submit\">Submit</button>
+                    </div>
+                </div>";
+            echo "</form>";
+        }
+        else if($row["On_Leave"] == 1)
+        {
+            echo "<div id=\"card\" class=\"d-flex justify-content-center\">";
+                echo "<div class=\"card\">";
+                    echo "<div class=\"card-body\">";
+                        echo "<h1 class=\"card-title\">Leave Granted</h1>";
+                    echo "</div>";
+                echo "</div>";
+            echo "</div>";
+            echo "<div class=\"row\">";
+                echo "<div class=\"col-lg-12 d-flex justify-content-center\">";
+                    echo "<button>Rejoin</button>";
+                echo "</div>";
+                // echo "<div class=\"col-lg-6 d-flex justify-content-start\">";
+                //     echo "<button>Back</button>";
+                // echo "</div>";
+            echo "</div>";
+            
+        }
+        else if($row["Leave_Rejected"] == 1)
+        {
+            echo "<div id=\"card\" class=\"d-flex justify-content-center\">";
+                echo "<div class=\"card\">";
+                    echo "<div class=\"card-body\">";
+                        echo "<h1 class=\"card-title\">Leave Rejected</h1>";
+                    echo "</div>";
+                echo "</div>";
+            echo "</div>";
+        }
+    ?>
 
 
 
