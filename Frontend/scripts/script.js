@@ -20,6 +20,9 @@ function admin_functions(page) {
         case 'doctor_add':
             window.location.href = "doctor_form.html";
             break;
+        case 'doctor_leave_req':
+            window.location.href = "doctor_leave_req_view.php";
+            break;
         case 'nurse_view':
             window.location.href = "nurse_table.php";
             break;
@@ -59,6 +62,9 @@ function doctor_functions(page) {
             break;
         case 'discharge':
             window.location.href = "discharge_patient.php";
+            break;
+        case 'leave_req':
+            window.location.href = "doctor_req_leave.html";
             break;
     }
 }
