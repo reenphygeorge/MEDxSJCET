@@ -25,29 +25,51 @@
   <div class="container">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+            <div class="container-fluid">
+                <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="contact.html">Contact</a> -->
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Options
+                                </a>
 
-    <h2 class="text-center"> Update Patient </h2>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_panel.html">>
+                                            Dashboard</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="/MEDxSJCET/Frontend/Pages/doctor_patient_update.php">>
+                                            Update Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="/MEDxSJCET/Frontend/Pages/doctor_patient_table.php">> View Booked Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item"
+                                            href="/MEDxSJCET/Frontend/Pages/discharge_patient.php">> Discharge Patient</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <h2 class="text-center"> Discharge Patient </h2>
     <form method="post" action="/MEDxSJCET/Backend/Pages/Doctor/discharge.php">
-      <table class="d-flex justify-content-center">
+      <table class="d-flex justify-content-center mb-5">
       <tr>
           <td>
-            <select class="form room_form" name="pid">
+            <select class="form room_form" name="pid" required">
             <option disabled selected hidden>Patient ID</option>
             <?php
                 include "connection.php";
@@ -59,22 +81,19 @@
                 $result = mysqli_query($conn, $sql);
 
                 while($row = mysqli_fetch_array($result)) {
-                    echo "<option value=" . $row["P_id"] . ">" . $row["P_id"] . "</option>";
+                    echo "<option required value=" . $row["P_id"] . ">" . $row["P_id"] . "</option>";
                 }
             ?>
           </td>
         </tr>
         <tr>
           <td>
-            <input class="form room_form" type="text" placeholder="      Discharge Date" name="dis_date" onfocus="(this.type='date')">
+            <input class="form room_form" type="text" placeholder="      Discharge Date" name="dis_date" onfocus="(this.type='date')"  required>
           </td>
         </tr>
       </table>
-      <div class="row mt-5">
-        <div class="col-lg-6 d-flex justify-content-end">
-          <button class="back" type="button" onclick="doctor_panel()">Back</button>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-start">
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-12 d-flex justify-content-center">
           <button class="submit">Discharge</button>
         </div>
       </div>

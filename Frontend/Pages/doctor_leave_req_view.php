@@ -24,7 +24,7 @@
 <body>
     <div class="container">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -68,27 +68,34 @@
     <div id="card" class="d-flex justify-content-center">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title">New Ward Boy Added</h1>
+                <h1 class="card-title">Leave Requests</h1>
                 <?php
-                    $uid = $_GET['uid'];
                     include "connection.php";
 
                     error_reporting(0);
                     session_start();
                 
-                    $sql = "SELECT * FROM ward_boy WHERE WB_id = '$uid'";
+                    $sql = "SELECT * FROM doctor WHERE Leave_Req = 1";
                     $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_array($result);
-                    echo "<h2 class=\"card-subtitle1\">ID: ". $row["WB_id"] ."</h2>";
-                    echo "<h2 class=\"card-subtitle2\">NAME: ". $row["WB_name"] ."</h2>";
-                    echo "<h2 class=\"card-subtitle5\">DOB: ". $row["WB_DOB"] ."</h2>";
-                    echo "<h2 class=\"card-subtitle7\">ADDRESS: ". $row["WB_Address"] ."</h2>";
-                    echo "<h2 class=\"card-subtitle8\">PHONE: ". $row["WB_phone"] ."</h2>";
+                    while($row = mysqli_fetch_array($result))
+                    {
+                        echo "<h2 class=\"card-subtitle1\">ID: ". $row["D_id"] ."</h2>";
+                        echo "<h2 class=\"card-subtitle2\">NAME: ". $row["D_Name"] ."</h2>";
+                        echo "<h2 class=\"card-subtitle5\">LEAVE FROM: ". $row["Leave_From"] ."</h2>";
+                        echo "<h2 class=\"card-subtitle6\">LEAVE TO: ". $row["Leave_To"] ."</h2>";
+                        echo "<h2 class=\"card-subtitle7\">LEAVE REASON: ". $row["Leave_Reason"] ."</h2>";
+                        echo "<form method=\"post\" action=\"/MEDxSJCET/Backend/Pages/Admin/leave_request.php\">";
+                        echo "<button name=\"grant_leave\" style=\"width:200px;\" class=\"mt-3\" value=". $row["D_id"] .">Grant Leave</button>";
+                        echo "</form>";
+                        echo "<form method=\"post\" action=\"/MEDxSJCET/Backend/Pages/Admin/leave_request.php\">";
+                        echo "<button name=\"reject_leave\" style=\"width:200px;\" class=\"mt-3 mb-5\" value=". $row["D_id"] .">Reject Leave</button>";
+                        echo "</form>";
+                    }
                 ?>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center"><button onclick="admin_panel()">Back</button></div>
+    <div class="d-flex justify-content-center"><button onclick="admin_panel()" class="mb-5">Back</button></div>
     <script src="../scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

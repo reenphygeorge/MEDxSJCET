@@ -10,8 +10,10 @@
         $disease = $_POST['disease'];
         $rid = $_POST['rid'];
         $adm_date = $_POST['adm_date'];
+        $prescription = $_POST['prescription'];
+        $test = $_POST['test'];
         
-        $sql = "UPDATE patient SET R_id = '$rid', disease = '$disease', Date_admitted = '$adm_date' WHERE P_id = '$pid'"; 
+        $sql = "UPDATE patient SET R_id = '$rid', disease = '$disease', Date_admitted = '$adm_date', prescription = '$prescription', tests = '$test'  WHERE P_id = '$pid'"; 
         $result = mysqli_query($conn, $sql);
 
         $sql = "UPDATE room SET available = 'no' WHERE R_id = '$rid'"; 

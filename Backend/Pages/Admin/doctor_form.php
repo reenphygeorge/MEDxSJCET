@@ -16,8 +16,12 @@
         $dob = $_POST['dob'];
         $gender = $_POST['gender'];
         $password = $_POST['dpass'];
+        $doj = $_POST['doj'];
+        $start_time = $_POST['start_time'];
+        $end_time = $_POST['end_time'];
+        $salary = 50000;
 
-        $sql = "INSERT INTO doctor (`D_Name`, `Specialization`, `Phone_No`,`Department`,`Address`,`DOB`,`Gender`) VALUES ('$name', '$spec', '$phone', '$dept','$address','$dob','$gender')";    
+        $sql = "INSERT INTO doctor (`D_Name`, `Specialization`, `Phone_No`,`Department`,`Address`,`DOB`,`Gender`,`Salary`,`Join_Date`,`start_time`,`end_time`) VALUES ('$name', '$spec', '$phone', '$dept','$address','$dob','$gender','$salary','$doj','$start_time','$end_time')";    
         $result = mysqli_query($conn, $sql);
         
         $sql = "SELECT * FROM `doctor` ORDER BY `D_id` DESC LIMIT 1";
