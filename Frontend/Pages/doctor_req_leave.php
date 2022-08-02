@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
             <div class="container-fluid">
                 <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -41,28 +41,24 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/admin_panel.html">>
-                                            Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_table.php">>
-                                            View Doctor</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_form.html">> Add
-                                            Doctor</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/nurse_table.php">> View
-                                            Nurse</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/nurse_form.html">> Add
-                                            Nurse</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/room_table.php">> View
-                                            Room</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/room_form.html">> Add
-                                            Room</a></li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/ward_boy_table.php">>
-                                            View Ward-Boy</a>
+                                    <li><a class="dropdown-item" onclick="doctor_panel()" style="cursor: pointer;">>
+                                            Dashboard</a>
                                     </li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/wardboy_form.html">>
-                                            Add Ward-Boy</a>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('update')"
+                                            style="cursor: pointer;">>
+                                            Update Patient</a>
                                     </li>
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/patient_table.php">>
-                                            View Patient</a>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('view')"
+                                            style="cursor: pointer;">> View Booked
+                                            Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('discharge')"
+                                            style="cursor: pointer;">> Discharge
+                                            Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('leave_req')"
+                                            style="cursor: pointer;">
+                                            > Request Leave</a>
                                     </li>
                                 </ul>
                             </div>
@@ -80,8 +76,6 @@
         include "connection.php";
         error_reporting(0);
         session_start();
-        // $sql = "SELECT * from doctor WHERE D_id = ".$_SESSION['doctor_id'];
-        // $result = mysqli_query($conn, $sql);
         $did = $_GET["id"];
 
         $sql = "SELECT * FROM doctor WHERE D_id = $did";
@@ -127,7 +121,9 @@
             echo "</div>";
             echo "<div class=\"row\">";
                 echo "<div class=\"col-lg-12 d-flex justify-content-center\">";
-                    echo "<button>Rejoin</button>";
+                    echo "<form method=\"post\" action=\"/MEDxSJCET/Backend/Pages/Doctor/rejoin.php\">";
+                        echo "<button name=\"rejoin\" value=".$_GET['id'].">Rejoin</button>";
+                    echo "<form>";
                 echo "</div>";
                 // echo "<div class=\"col-lg-6 d-flex justify-content-start\">";
                 //     echo "<button>Back</button>";

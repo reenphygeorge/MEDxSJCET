@@ -82,12 +82,16 @@
                     echo "<h2 class=\"card-subtitle5\">DOCTOR ID: ". $row2["D_id"] ."</h2>";
                     echo "<h2 class=\"card-subtitle5\">DOCTOR NAME: ". $row2["D_Name"] ."</h2>";
                     echo "<h2 class=\"card-subtitle5\">DEPARTMENT: ". $row2["Department"] ."</h2>";
+                    echo "<h2 class=\"card-subtitle5\">APPOINTMENT FEE: 200</h2>";
                 ?>
             </div>
         </div>
     </div>
     <div class="d-flex justify-content-center"><button onclick="receptionist_panel()">Back</button></div>
     <script src="../scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

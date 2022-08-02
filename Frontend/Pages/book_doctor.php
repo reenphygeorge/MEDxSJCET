@@ -79,7 +79,7 @@
                 $result = mysqli_query($conn, $sql);
 
                 while($row = mysqli_fetch_array($result)) {
-                    echo "<option value=" . $row["D_id"] . ">" . $row["D_Name"] . "</option>";
+                    echo "<option value=" . $row["D_id"] . ">" . $row["D_Name"] ." (". $row["start_time"] ." - ". $row["end_time"] .")</option>";
                 }
             ?>
           </td>

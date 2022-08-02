@@ -8,7 +8,7 @@
     {
         $pid = $_POST['pid'];
         $dis_date = $_POST['dis_date'];
-        
+
         $sql = "SELECT R_id FROM patient WHERE P_id = '$pid'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
@@ -19,6 +19,8 @@
 
         $sql = "UPDATE room SET available = 'yes' WHERE R_id = '$rid'"; 
         $result = mysqli_query($conn, $sql);
-        header("location: ../../../Frontend/Pages/update_patient_confirmation.php?uid=".$pid);
+
+        $did = $_SESSION['doctor_id'];
+        header("location: ../../../Frontend/Pages/discharge_patient_confirmation.php?id=$did");
     }
 ?>

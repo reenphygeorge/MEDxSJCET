@@ -24,7 +24,7 @@
 <body>
     <div class="container">
         <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <div class="d-flex justify-content-center collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -43,6 +43,8 @@
                   <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/admin_panel.html">> Dashboard</a></li>
                   <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_table.php">> View Doctor</a></li>
                   <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_form.html">> Add Doctor</a></li>
+                  <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_leave_req_view.php">> Leave
+                      Requests</a></li>
                   <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/nurse_table.php">> View Nurse</a></li>
                   <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/nurse_form.html">> Add Nurse</a></li>
                   <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/room_table.php">> View Room</a></li>

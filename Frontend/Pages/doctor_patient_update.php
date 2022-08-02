@@ -40,18 +40,24 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/MEDxSJCET/Frontend/Pages/doctor_panel.html">>
+                                    <li><a class="dropdown-item" onclick="doctor_panel()" style="cursor: pointer;">>
                                             Dashboard</a>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            href="/MEDxSJCET/Frontend/Pages/doctor_patient_update.php">>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('update')"
+                                            style="cursor: pointer;">>
                                             Update Patient</a>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            href="/MEDxSJCET/Frontend/Pages/doctor_patient_table.php">> View Booked Patient</a>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('view')"
+                                            style="cursor: pointer;">> View Booked
+                                            Patient</a>
                                     </li>
-                                    <li><a class="dropdown-item"
-                                            href="/MEDxSJCET/Frontend/Pages/discharge_patient.php">> Discharge Patient</a>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('discharge')"
+                                            style="cursor: pointer;">> Discharge
+                                            Patient</a>
+                                    </li>
+                                    <li><a class="dropdown-item" onclick="doctor_functions('leave_req')"
+                                            style="cursor: pointer;">
+                                            > Request Leave</a>
                                     </li>
                                 </ul>
                             </div>
@@ -77,7 +83,8 @@
                 error_reporting(0);
                 session_start();
                 
-                $sql = "SELECT * FROM patient WHERE D_id = ".$_SESSION['doctor_id'];
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM patient WHERE D_id = $id";
                 $result = mysqli_query($conn, $sql);
 
                 while($row = mysqli_fetch_array($result)) {

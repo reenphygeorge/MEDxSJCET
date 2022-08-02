@@ -55,18 +55,63 @@ function admin_panel() {
 function doctor_functions(page) {
     switch (page) {
         case 'view':
-            window.location.href = "doctor_patient_table.php";
+            var url = window.location.href;
+            var url_length = url.length;
+            var temp = "", i = 1, id = "";
+            while (temp != '=') {
+                temp = url.charAt(url_length - i);
+                if (temp == '=') {
+                    i--;
+                    break;
+                }
+                i++;
+            }
+            for (; i >= 1; i--) {
+                id += url.charAt(url_length - i);
+            }
+            url = "doctor_patient_table.php?id=" + id;
+            window.location.href = url;
             break;
         case 'update':
-            window.location.href = "doctor_patient_update.php";
+            var url = window.location.href;
+            var url_length = url.length;
+            var temp = "", i = 1, id = "";
+            while (temp != '=') {
+                temp = url.charAt(url_length - i);
+                if (temp == '=') {
+                    i--;
+                    break;
+                }
+                i++;
+            }
+            for (; i >= 1; i--) {
+                id += url.charAt(url_length - i);
+            }
+            url = "doctor_patient_update.php?id=" + id;
+            window.location.href = url;
             break;
         case 'discharge':
-            window.location.href = "discharge_patient.php";
+            var url = window.location.href;
+            var url_length = url.length;
+            var temp = "", i = 1, id = "";
+            while (temp != '=') {
+                temp = url.charAt(url_length - i);
+                if (temp == '=') {
+                    i--;
+                    break;
+                }
+                i++;
+            }
+            for (; i >= 1; i--) {
+                id += url.charAt(url_length - i);
+            }
+            url = "discharge_patient.php?id=" + id;
+            window.location.href = url;
             break;
         case 'leave_req':
             var url = window.location.href;
             var url_length = url.length;
-            let temp, i = 1, id = "";
+            var temp = "", i = 1, id = "";
             while (temp != '=') {
                 temp = url.charAt(url_length - i);
                 if (temp == '=') {
@@ -85,7 +130,22 @@ function doctor_functions(page) {
 }
 
 function doctor_panel() {
-    window.location.href = "doctor_panel.html"
+    var url = window.location.href;
+    var url_length = url.length;
+    var temp = "", i = 1, id = "";
+    while (temp != '=') {
+        temp = url.charAt(url_length - i);
+        if (temp == '=') {
+            i--;
+            break;
+        }
+        i++;
+    }
+    for (; i >= 1; i--) {
+        id += url.charAt(url_length - i);
+    }
+    url = "doctor_panel.html?id=" + id;
+    window.location.href = url;
 }
 
 // Receptionist Functions
