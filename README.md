@@ -17,6 +17,21 @@
 - [PHP](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
 
+### Pre-Requisite
+- [XAMPP](https://www.apachefriends.org/index.html)
+
+### Installation
+- Clone this repo to htdocs
+      
+        git clone https://github.com/reenphygeorge/MEDxSJCET
+- Start Apache server & MySQL in XAMPP-Control
+- Visit phpMyAdmin and import the database file. [ [DB file](https://github.com/reenphygeorge/MEDxSJCET/tree/main/Backend/DB) ]
+    
+        http://localhost/phpmyadmin
+- Now visit the site
+
+      http://localhost/MEDxSJCET/index.html
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/reenphygeorge/MEDxSJCET.svg?style=for-the-badge
 [contributors-url]: https://github.com/reenphygeorge/MEDxSJCET/graphs/contributors
