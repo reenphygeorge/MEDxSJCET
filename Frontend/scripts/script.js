@@ -1,3 +1,10 @@
+var x = window.matchMedia("(max-width: 1199px)")
+function MobileView() {
+    if (x.matches) { // If media query matches
+        window.location.href = "Frontend/Pages/mobile_warning.html";
+    }
+}
+
 // Front Page
 function login_redirect() {
     window.location.href = "Frontend/Pages/login.html"
